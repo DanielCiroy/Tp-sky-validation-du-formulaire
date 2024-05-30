@@ -1,24 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .champ {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #resultat {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <form action="">
-        <input type="text"><input type="text"><input type="text"><input type="text">
-    </form>
-
-
-
-
-
-
-
-
+    <div class="container">
+        <h1>Connexion</h1>
+        <form id="formulaireConnexion" onsubmit="return connexion()">
+            <div class="champ">
+                <label for="nomUtilisateur">Nom d'utilisateur:</label>
+                <input type="text" id="nomUtilisateur" name="nomUtilisateur" required>
+            </div>
+            <div class="champ">
+                <label for="motDePasse">Mot de passe:</label>
+                <input type="password" id="motDePasse" name="motDePasse" required>
+            </div>
+            <button type="submit">Se connecter</button>
+        </form>
+        <div id="resultat"></div>
+    </div>
 
 
 
@@ -26,6 +69,31 @@
 
 
     <script>
+        function connexion() {
+            let nomUtilisateur = document.getElementById('nomUtilisateur').value;
+            let motDePasse = document.getElementById('motDePasse').value;
+            let utilisateurs = {
+                "daniel": "00000000",
+                "benjamin": "11111111",
+                "john": "55555555"
+
+            };
+
+
+            if (utilisateurs[nomUtilisateur] && utilisateurs[nomUtilisateur] === motDePasse) {
+                let resultat = nomUtilisateur;
+                document.getElementById('resultat').style.color = "green";
+                resultat += "- Nom: " + nomUtilisateur + "\n";
+                document.getElementById('resultat').innerHTML = resultat;
+            } else {
+                let resultat = "Erreur de connexion. Veuillez réessayer.";
+                document.getElementById('resultat').style.color = "red";
+                document.getElementById('resultat').innerHTML = resultat;
+            }
+            return false;
+        }
+
+
 
     </script>
 </body>
