@@ -1,110 +1,73 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Document</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-
-        .container {
-            width: 400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .champ {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            width: 100%;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        #resultat {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Connexion</h1>
-        <form id="formulaireConnexion" onsubmit="return connexion()">
-            <div class="champ">
-                <label for="nomUtilisateur">Nom d'utilisateur:</label>
-                <input type="text" id="nomUtilisateur" name="nomUtilisateur" required>
-            </div>
-            <div class="champ">
-                <label for="motDePasse">Mot de passe:</label>
-                <input type="password" id="motDePasse" name="motDePasse" required>
-            </div>
-            <button type="submit">Se connecter</button>
-        </form>
-        <div id="resultat"></div>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nom</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Prenom</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nom</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
 
+                    <fieldset class="form-group row">
+                        <legend class="col-form-label col-sm-2 float-sm-left pt-0">Radios</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                    value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    First radio
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                    value="option2">
+                                <label class="form-check-label" for="gridRadios2">
+                                    Second radio
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
 
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit distinctio doloribus rerum dolore voluptatibus
-        aut, quis ipsa alias dolor ex delectus voluptatum atque sunt ipsum error eveniet labore eaque vero quam porro
-        eos. Cum architecto perspiciatis nulla itaque. Voluptatibus quos eius dolorem dolor ut sunt earum aut quia,
-        maxime delectus non quae magni ea rerum laudantium ad laborum exercitationem soluta, odit eligendi! In ab
-        ducimus labore placeat voluptatem repudiandae necessitatibus eius aperiam, magni, dolorum sit quisquam provident
-        voluptatum officiis commodi culpa, dignissimos natus molestias voluptate fugit dolor distinctio? Architecto
-        labore doloribus illum quisquam assumenda dolor nobis nemo ullam fuga accusantium!
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+        </div>
     </div>
-
-
-
-
-
-
-    <script>
-        function connexion() {
-            let nomUtilisateur = document.getElementById('nomUtilisateur').value;
-            let motDePasse = document.getElementById('motDePasse').value;
-            let utilisateurs = {
-                "daniel": "00000000",
-                "benjamin": "11111111",
-                "john": "55555555"
-
-            };
-
-
-            if (utilisateurs[nomUtilisateur] && utilisateurs[nomUtilisateur] === motDePasse) {
-                let resultat = nomUtilisateur;
-                document.getElementById('resultat').style.color = "green";
-                resultat += "- Nom: " + nomUtilisateur + "\n";
-                document.getElementById('resultat').innerHTML = resultat;
-            } else {
-                let resultat = "Erreur de connexion. Veuillez réessayer.";
-                document.getElementById('resultat').style.color = "red";
-                document.getElementById('resultat').innerHTML = resultat;
-            }
-            return false;
-        }
-
-
-
-    </script>
 </body>
 
 </html>
